@@ -2,14 +2,16 @@ package com.crudoperation.controller;
 
 import com.crudoperation.entity.product;
 import com.crudoperation.service.productService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("product")
+@RequestMapping("/product")
 public class productController {
 
+    @Autowired
     private productService service;
     @PostMapping("addProduct")
     public product addProduct(@RequestBody product product){
@@ -21,8 +23,8 @@ public class productController {
 
     }
     @GetMapping("allProduct")
-    public List<product> findAllProduct(@RequestBody List<product> product){
-        return service.saveProducts(product);
+    public List<product> findAllProduct(){
+        return service.getProducts();
     }
     @GetMapping("byId/{id}")
     public product findById(@PathVariable int id){

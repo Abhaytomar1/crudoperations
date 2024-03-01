@@ -2,12 +2,15 @@ package com.crudoperation.service.impl;
 
 import com.crudoperation.entity.product;
 import com.crudoperation.repository.productRepository;
+import com.crudoperation.service.productService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class serviceImpl {
+public class serviceImpl implements productService {
+    @Autowired
     private productRepository repository;
 
     public product saveProduct(product product){
