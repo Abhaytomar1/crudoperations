@@ -20,4 +20,12 @@ public class encapsulation_p1 {
     public void setB(int b) {
         this.b = b;
     }
+
+    @Override
+    public String toString() {
+        return "encapsulation_p1{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
 }
